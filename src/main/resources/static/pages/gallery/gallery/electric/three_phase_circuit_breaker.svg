@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="_x30_" xmlns:agg="http://www.example.com"
+	 xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"   x="0px" y="0px" 
+	  viewBox="0 -3.156 40.865 19.421" enable-background="new 0 -3.156 40.865 19.421" xml:space="preserve">
+<agg:params>
+	<agg:param type="C" name="color" description="Color" cssAttributes="fill" classes="color"/>
+	<agg:param type="C" name="strokeColor" description="Stroke Color" cssAttributes="stroke" classes="color,stroked"/>
+</agg:params>
+<style type="text/css" >
+<![CDATA[
+
+	.color,.stroked,.dashed{
+		stroke-width:0.5;
+		stroke-linecap:round;
+		stroke-linejoin:round;
+		stroke: #000000;
+	}
+	
+	.color {
+		fill:   #A1BFE2;
+
+	}
+	
+	.stroked,.dashed{
+		fill:none;
+	}
+	
+	.dashed {
+		stroke-dasharray:1.4173,1.4173;
+	}
+
+      ]]>
+</style>
+<g class="stroked">
+	<polyline points="10.723,6.276 38.408,6.276 39.851,1.774 "/>
+	<path d="M6.709-1.537 c2.431,1.743,4.014,4.592,4.014,7.811c0,3.224-1.585,6.073-4.019,7.813"/>
+	<path d="M19.048-1.652 c2.43,1.743,4.014,4.592,4.014,7.811c0,3.223-1.586,6.073-4.019,7.813"/>
+	<path d="M31.335-1.536 c2.431,1.743,4.015,4.592,4.015,7.811c0,3.224-1.586,6.073-4.019,7.813"/>
+	<circle cx="3.046" cy="-0.089" r="1.65"/>
+	<circle cx="3.046" cy="13.211" r="1.65"/>
+	<circle cx="15.728" cy="-0.089" r="1.65"/>
+	<circle cx="15.728" cy="13.211" r="1.65"/>
+	<circle cx="28.074" cy="-0.089" r="1.65"/>
+	<circle cx="28.074" cy="13.211" r="1.65"/>
+</g>
+</svg>

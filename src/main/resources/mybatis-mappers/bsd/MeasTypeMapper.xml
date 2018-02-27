@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wd.pydjc.bsd.dao.MeasTypeDao">
+
+	<resultMap id="BaseResultMap" type="MeasType">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="code" property="code" />  
+		<result column="code645" property="code645" />  
+		<result column="parentCode" property="parentCode" />  
+	</resultMap>
+
+	
+	<select id="getChildList" resultMap="BaseResultMap">
+		select t.*,p.code as parentCode from bsd_meas_type t,bsd_meas_type p where IFNULL(t.parent_id,t.id) = p.id 
+
+		<if test="params.parentCode != null and params.parentCode != ''">
+			and p.code  = #{params.parentCode}
+		</if>
+	</select>
+	
+	
+</mapper>

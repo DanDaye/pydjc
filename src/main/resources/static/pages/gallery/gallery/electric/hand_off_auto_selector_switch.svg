@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="_x30_" xmlns:agg="http://www.example.com"
+	 xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"   x="0px" y="0px" 
+	  viewBox="0 -14.377 41.68 28.174" enable-background="new 0 -14.377 41.68 28.174" xml:space="preserve">
+<agg:params>
+	<agg:param type="C" name="color" description="Color" cssAttributes="fill" classes="color"/>
+	<agg:param  type="C" classes="color,stroked" name="strokeColor" description="Stroke Color" cssAttributes="stroke"/>
+</agg:params>
+<style type="text/css" >
+<![CDATA[
+
+	.color,.stroked,.dashed{
+		stroke-width:0.5;
+		stroke-linecap:round;
+		stroke-linejoin:round;
+		stroke: #000000;
+	}
+	
+	.color {
+		fill:   #A1BFE2;
+
+	}
+	
+	.stroked,.dashed{
+		fill:none;
+	}
+	
+	.dashed {
+		stroke-dasharray:1.4173,1.4173;
+	}
+
+      ]]>
+</style>
+<g class="stroked">
+	<line x1="11.114" y1="7.037" x2="30.195" y2="7.037"/>
+	<line x1="30.347" y1="9.962" x2="39.89" y2="9.962"/>
+	<line x1="10.858" y1="9.962" x2="1.418" y2="9.962"/>
+	<circle cx="13.277" cy="9.962" r="2.418"/>
+	<circle cx="27.929" cy="9.961" r="2.418"/>
+	<circle cx="13.277" cy="0.361" r="2.418"/>
+	<circle cx="27.929" cy="0.361" r="2.418"/>
+	<line x1="10.825" y1="0.335" x2="1.357" y2="0.335"/>
+	<line x1="30.38" y1="0.335" x2="39.952" y2="0.335"/>
+	<polyline points="20.655,6.998 20.655,-5.815 26.676,-9.3 "/>
+	<line x1="11.083" y1="-2.586" x2="30.226" y2="-2.586"/>
+	<line fill="none" stroke="#000000" stroke- stroke-linecap="square" stroke-miterlimit="10" x1="10.825" y1="9.92" x2="1.357" y2="9.92"/>
+	<line fill="none" stroke="#000000" stroke- stroke-linecap="square" stroke-miterlimit="10" x1="30.38" y1="9.92" x2="39.952" y2="9.92"/>
+	<line x1="10.928" y1="-4.431" x2="10.928" y2="-8.377"/>
+	<line x1="13.862" y1="-4.431" x2="13.862" y2="-8.377"/>
+	<line x1="13.862" y1="-6.43" x2="10.928" y2="-6.43"/>
+	<polyline points="27.448,-4.431 28.888,-8.377 30.38,-4.431 "/>
+	<line x1="29.969" y1="-5.456" x2="27.808" y2="-5.456"/>
+	<ellipse cx="20.619" cy="-10.245" rx="1.457" ry="1.868"/>
+</g>
+</svg>

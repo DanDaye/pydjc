@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#FF0000;}
+	.st2{fill:none;stroke:#FF0000;stroke-width:0.75;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<g id="XMLID_4_">
+		<path id="XMLID_6_" class="st0" d="M20,39.6C9.2,39.6,0.4,30.8,0.4,20S9.2,0.4,20,0.4S39.6,9.2,39.6,20S30.8,39.6,20,39.6z"/>
+		<path id="XMLID_5_" class="st1" d="M20,0.8c10.6,0,19.3,8.6,19.3,19.3c0,10.7-8.7,19.2-19.3,19.2S0.8,30.6,0.8,20S9.4,0.8,20,0.8
+			 M20,0C9,0,0,9,0,20s9,20,20,20s20-9,20-20S31,0,20,0L20,0z"/>
+	</g>
+	<line id="XMLID_3_" class="st2" x1="2.9" y1="10.7" x2="36.9" y2="10.7"/>
+	<line id="XMLID_9_" class="st2" x1="2.9" y1="30" x2="36.9" y2="30"/>
+</g>
+</svg>
