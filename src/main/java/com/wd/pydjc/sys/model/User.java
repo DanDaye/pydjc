@@ -24,6 +24,7 @@ public class User extends BaseEntity<Long> {
 	private Integer status;
 	
 	private Integer customerId; //客户ID
+	private String customerName; //客户
 
 	public String getUsername() {
 		return username;
@@ -125,6 +126,14 @@ public class User extends BaseEntity<Long> {
 
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
 	}
 	
 	

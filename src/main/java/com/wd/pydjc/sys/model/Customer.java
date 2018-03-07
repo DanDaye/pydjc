@@ -16,6 +16,8 @@ public class Customer extends BaseEntity<Long> {
 	private String code;
 	private String address;
 	private String tel;
+	private Integer status;
+	
 	public String getName() {
 		return name;
 	}
@@ -52,6 +54,16 @@ public class Customer extends BaseEntity<Long> {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	public interface Status {
+		int DISABLED = 0;
+		int VALID = 1;
+		int LOCKED = 2;
+	}
 	
 }

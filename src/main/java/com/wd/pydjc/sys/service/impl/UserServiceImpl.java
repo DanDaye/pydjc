@@ -96,4 +96,17 @@ public class UserServiceImpl implements UserService {
 			UserUtil.setUserSession(user);
 		}
 	}
+	
+	
+	@Override
+	public void resetPw(Long id) {
+		User u = userDao.getById(id);
+		if (u == null) {
+			throw new IllegalArgumentException("用户不存在");
+		}
+
+		userDao.changePassword(u.getId(), passwordEncoder("123456", u.getSalt()));
+
+		log.debug("重置{}的密码", u.getUsername());
+	}
 }

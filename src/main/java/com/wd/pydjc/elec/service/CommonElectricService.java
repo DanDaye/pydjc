@@ -309,6 +309,46 @@ public class CommonElectricService {
 	}
 	
 	/**
+	 * 电量数据,每隔时间的最大值-最小值
+	 * 每天的电量 = 每天的差值
+	 * @param startTime 开始时间  北京时间  格式 yyyy-MM-dd 00:00:00
+	 * @param endTime   结束时间  北京时间  格式 yyyy-MM-dd 23:59:59
+	 * @Param time 每隔 多久的平均值      60m = 60分钟    1440m = 24小时
+	 * @return map <测点ID,<时间，值>>
+	 */
+	public Map<Long,BigDecimal> getElectiricEp(String startTime,String endTime){
+
+		Map<Long,BigDecimal> map = new HashMap<Long,BigDecimal>();
+		
+		startTime = DateUtil.string2TimezoneDefault(startTime,"UTC");
+		endTime = DateUtil.string2TimezoneDefault(endTime,"UTC");
+	
+		String sql = "select spread(value) from data where time>='"+ startTime +"'and time<='" + endTime + "' and type='9010' group by id";
+		QueryResult queryResult = influxDBService.query(sql);
+		List<Result> list = queryResult.getResults();
+		for(int i=0;i<list.size();i++){
+			Result result = list.get(i);
+			List<Series> listSeries = result.getSeries();
+			
+			if(listSeries != null){
+				for(int n=0;n<listSeries.size();n++){
+					Series series = listSeries.get(n);
+					Map<String,String> tagMap = series.getTags();
+					List<List<Object>> ll = series.getValues();
+					
+					BigDecimal value = new BigDecimal(0);
+					for (int j = 0; j < ll.size(); j++) {
+						List<Object> lo = ll.get(j);
+						value = new BigDecimal(lo.get(1).toString()).setScale(3, BigDecimal.ROUND_HALF_UP);
+					}
+					map.put(Long.parseLong(tagMap.get("id")),value);
+				}
+			}
+		}
+		return map;
+	}
+	
+	/**
 	 * 得到子测点类型信息
 	 * @param measTypeCode
 	 * @return

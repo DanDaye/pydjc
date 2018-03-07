@@ -26,6 +26,8 @@ public class AlarmData extends BaseEntity<Long> {
 	private String measPointName;
 	private String alarmTypeName;
 	
+	private String type;
+	
 	public Long getDeviceId() {
 		return deviceId;
 	}
@@ -86,10 +88,10 @@ public class AlarmData extends BaseEntity<Long> {
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
-	public String getRdpNo() {
+	public String getRpdNo() {
 		return rdpNo;
 	}
-	public void setRdpNo(String rdpNo) {
+	public void setRpdNo(String rdpNo) {
 		this.rdpNo = rdpNo;
 	}
 	public String getDeviceAddr() {
@@ -115,6 +117,18 @@ public class AlarmData extends BaseEntity<Long> {
 	}
 	public void setAlarmTypeName(String alarmTypeName) {
 		this.alarmTypeName = alarmTypeName;
+	}
+	public String getRdpNo() {
+		return rdpNo;
+	}
+	public void setRdpNo(String rdpNo) {
+		this.rdpNo = rdpNo;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	

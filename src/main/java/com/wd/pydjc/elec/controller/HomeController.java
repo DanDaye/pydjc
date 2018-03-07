@@ -37,6 +37,91 @@ public class HomeController {
 	private static SimpleDateFormat formatDay = new SimpleDateFormat("yyyy-MM-dd");
 	private static DateFormat formatTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
+
+	@GetMapping("/info")
+	public JSONObject info(String date) {
+		JSONObject rows = new JSONObject();
+		
+		/**
+		 * 有功电度,通过配置得到总的测点信息
+		 */
+		List<MeasPoint> measPointList = measPointService.getDeviceTotleMeasPoint("Ep");
+		
+		//今天
+		Map<Long,BigDecimal> dayMapEp = commonElectricService.getElectiricEp(DateUtil.getStartTime(null), DateUtil.getEndTime(null));
+		
+		Calendar cale = Calendar.getInstance();   
+        // 获取前月的第一天  
+        cale = Calendar.getInstance();  
+        cale.add(Calendar.MONTH, 0);  
+        cale.set(Calendar.DAY_OF_MONTH, 1);  
+        String firstday = formatDay.format(cale.getTime()); 
+		Map<Long,BigDecimal> monthMapEp = commonElectricService.getElectiricEp(DateUtil.getMonthFirstDay(firstday), DateUtil.getMonthLastDay(firstday));
+		
+	    //上个月
+		Calendar lastCale = Calendar.getInstance();  
+		lastCale.add(Calendar.MONTH, -1);  
+		lastCale.set(Calendar.DAY_OF_MONTH, 1);  
+		String lastday = formatDay.format(lastCale.getTime());  
+		Map<Long,BigDecimal> lastMonthMapEp = commonElectricService.getElectiricEp(DateUtil.getMonthFirstDay(lastday), DateUtil.getMonthLastDay(lastday));
+	
+		//电量相加
+		BigDecimal dayEp = new BigDecimal(0);
+		BigDecimal monthEp = new BigDecimal(0);
+		BigDecimal lastMonthEp = new BigDecimal(0);
+		for(MeasPoint mp : measPointList){
+			if(dayMapEp.get(mp.getId()) != null){
+				dayEp = dayEp.add(dayMapEp.get(mp.getId()));
+			}
+			if(monthMapEp.get(mp.getId()) != null ){
+				monthEp = monthEp.add(monthMapEp.get(mp.getId()));
+			}
+			if(lastMonthMapEp.get(mp.getId()) != null){
+				lastMonthEp = lastMonthEp.add(lastMonthMapEp.get(mp.getId())) ;
+			}
+		}
+		
+		rows.put("dayEp", dayEp);
+		rows.put("monthEp", monthEp);
+		rows.put("lastMonthEp", lastMonthEp);
+		
+		/**
+		 * 负荷测点,通过配置得到总的测点信息
+		 */
+		BigDecimal dayP = new BigDecimal(0);
+		BigDecimal monthEP = new BigDecimal(0);
+		BigDecimal lastMonthP = new BigDecimal(0);
+		List<MeasPoint> measPointListP = measPointService.getDeviceTotleMeasPoint("P");
+		Map<Long,Map<String,BigDecimal>> dayMaxP = commonElectricService.getElectiricMax(DateUtil.getStartTime(null), DateUtil.getEndTime(null),"P");
+		Map<Long,Map<String,BigDecimal>> monthMaxP = commonElectricService.getElectiricMax(DateUtil.getMonthFirstDay(firstday), DateUtil.getMonthLastDay(firstday),"P");
+		Map<Long,Map<String,BigDecimal>> lastMonthMaxP = commonElectricService.getElectiricMax(DateUtil.getMonthFirstDay(lastday), DateUtil.getMonthLastDay(lastday),"P");
+		for(MeasPoint mp : measPointListP){
+			 Map<String,BigDecimal> dayMaxMapP = dayMaxP.get(mp.getId());
+			 if(dayMaxMapP != null){
+				 for (String in : dayMaxMapP.keySet()) {
+					 dayP = dayP.add(dayMaxMapP.get(in));
+				 } 
+			 }
+			 Map<String,BigDecimal> monthMaxMapP = monthMaxP.get(mp.getId());
+			 if(monthMaxMapP != null){
+				 for (String in : monthMaxMapP.keySet()) {
+					 monthEP = monthEP.add(monthMaxMapP.get(in));
+				 }
+			 }
+			 Map<String,BigDecimal> lastMonthMaxMapP = lastMonthMaxP.get(mp.getId());
+			 if(lastMonthMaxMapP != null){
+				 for (String in : lastMonthMaxMapP.keySet()) {
+					 lastMonthP = lastMonthP.add(lastMonthMaxMapP.get(in));
+				 }
+			 }
+		}
+		rows.put("dayP", dayP);
+		rows.put("monthp", monthEp);
+		rows.put("lastMonthP", lastMonthP);
+		
+		return rows;
+	}
+	
 	@GetMapping("/chart")
 	public JSONObject chart(String date) {
 		
@@ -131,21 +216,19 @@ public class HomeController {
 		
 		JSONObject rows = new JSONObject();
 		
-		Calendar cale = Calendar.getInstance();  
-        String firstday;  
+		Calendar cale = Calendar.getInstance();   
         // 获取前月的第一天  
         cale = Calendar.getInstance();  
         cale.add(Calendar.MONTH, 0);  
         cale.set(Calendar.DAY_OF_MONTH, 1);  
-        firstday = formatDay.format(cale.getTime()); 
+        String firstday = formatDay.format(cale.getTime()); 
 		Map<Long,Map<String,BigDecimal>> chartMap = commonElectricService.getElectiricEp(DateUtil.getMonthFirstDay(firstday), DateUtil.getMonthLastDay(firstday), "1440m");
 		
 	    //上个月
-		String lastday;  
 		Calendar lastCale = Calendar.getInstance();  
 		lastCale.add(Calendar.MONTH, -1);  
 		lastCale.set(Calendar.DAY_OF_MONTH, 1);  
-		lastday = formatDay.format(lastCale.getTime());  
+		String lastday = formatDay.format(lastCale.getTime());  
 		Map<Long,Map<String,BigDecimal>> lastChartMap = commonElectricService.getElectiricEp(DateUtil.getMonthFirstDay(lastday), DateUtil.getMonthLastDay(lastday), "1440m");
 	
 		/**
