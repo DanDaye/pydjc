@@ -19,7 +19,7 @@
 			<div class="form-group">
 				<label class="col-md-2 control-label">密码</label>
 				<div class="col-md-10">
-					<input class="form-control" placeholder="密码" type="text" value="88888888" name="password"
+					<input class="form-control" placeholder="密码" type="text" value="123456" name="password"
 						data-bv-notempty="true"
 						data-bv-notempty-message="密码 不能为空">
 				</div>
@@ -48,24 +48,17 @@
 					<input class="form-control" placeholder="邮箱" type="text" maxlength="50" name="email">
 				</div>
 			</div>
-			<div class="form-group">
-				<label class="col-md-2 control-label">生日</label>
-				<div class="col-xs-2">
-				  <input type="text" class="form-control" placeholder="生日" id="birthday" name='birthday'>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-md-2 control-label">性别</label>
-				<div class="col-md-10" style="width: 100px">
-					<select class="form-control input-sm" name="sex">
-						<option value="1">男</option>
-						<option value="0">女</option>
-					</select>
-				</div>
-			</div>
+		
 			<div class="form-group">
 				<label class="col-md-2 control-label">角色</label>
 				<div class="checkbox" id="roles">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-md-2 control-label">公司</label>
+				<div class="col-md-10 form-inline">
+					<select class="selectpicker show-tick form-control" data-live-search="true" name="customerId" id="customer" ></select>
 				</div>
 			</div>
 
@@ -99,7 +92,8 @@
 		});
 
 		initRoles();
-	
+		initCustomers();
+		
 		$('#form').bootstrapValidator();
 		
 		function add() {
@@ -121,6 +115,23 @@
 					layer.msg("添加成功", {shift: -1, time: 1000}, function(){
                         location.href = "userList.html";
                     });
+				}
+			});
+		}
+		
+		function initCustomers() {
+
+			$.ajax({
+				type : 'get',
+				url : '/customer/getAllCustomer',
+				async : false,
+				success : function(data) {
+					var select = $("#customer");
+
+					for (var i = 0; i < data.length; i++) {
+						var v = data[i];
+						select.append("<option value='" + v.id + "'>" + v.name + "</option>")
+					}
 				}
 			});
 		}

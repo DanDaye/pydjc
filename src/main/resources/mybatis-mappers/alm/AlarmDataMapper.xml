@@ -13,6 +13,7 @@
 		<result column="deviceName" property="deviceName" />
 		<result column="measPointName" property="measPointName" />
 		<result column="alarmTypeName" property="alarmTypeName" />
+		<result column="type" property="type" />
 	</resultMap>
 
 
