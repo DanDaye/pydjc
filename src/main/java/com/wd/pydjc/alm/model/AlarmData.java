@@ -19,7 +19,7 @@ public class AlarmData extends BaseEntity<Long> {
 	private Date endTime;
 	private String cfmFlag;
 	private Long customerId;
-	private String rdpNo;
+	private String rpdNo;
 	private String deviceAddr;
 	
 	private String deviceName;
@@ -89,10 +89,10 @@ public class AlarmData extends BaseEntity<Long> {
 		this.customerId = customerId;
 	}
 	public String getRpdNo() {
-		return rdpNo;
+		return rpdNo;
 	}
 	public void setRpdNo(String rdpNo) {
-		this.rdpNo = rdpNo;
+		this.rpdNo = rdpNo;
 	}
 	public String getDeviceAddr() {
 		return deviceAddr;
@@ -119,10 +119,10 @@ public class AlarmData extends BaseEntity<Long> {
 		this.alarmTypeName = alarmTypeName;
 	}
 	public String getRdpNo() {
-		return rdpNo;
+		return rpdNo;
 	}
 	public void setRdpNo(String rdpNo) {
-		this.rdpNo = rdpNo;
+		this.rpdNo = rdpNo;
 	}
 	public String getType() {
 		return type;

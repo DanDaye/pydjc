@@ -16,7 +16,7 @@ public class Device extends BaseEntity<Long> {
 	private Long customerId;
 	private Long vandorId;
 	private Integer sort; 
-	private String rdpNo;
+	private String rpdNo;
 	
 	private List<Device> child;
 	private Device parent;
@@ -92,10 +92,10 @@ public class Device extends BaseEntity<Long> {
 		this.parent = parent;
 	}
 	public String getRdpNo() {
-		return rdpNo;
+		return rpdNo;
 	}
 	public void setRpdNo(String rdpNo) {
-		this.rdpNo = rdpNo;
+		this.rpdNo = rdpNo;
 	}
 	public String getNo() {
 		return no;

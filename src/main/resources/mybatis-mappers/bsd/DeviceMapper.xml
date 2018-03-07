@@ -13,7 +13,7 @@
 		<result column="org_iId" property="orgId" />
 		<result column="vandor_id" property="vandorId" />
 		<result column="sort" property="sort" />
-		<result column="rdp_no" property="rdpNo" />
+		<result column="rdp_no" property="rpdNo" />
 		<result column="del_flag" property="delFlag" />
 		<result column="create_time" property="createTime" />
 		<result column="update_time" property="updateTime" />
@@ -108,7 +108,7 @@
 				sort = #{sort},
 			</if>
 			<if test="rpdNo != null">
-				rpd_no = #{rpdNo},
+				rdp_no = #{rpdNo},
 			</if>
 			update_time = #{updateTime}
 		</set>
