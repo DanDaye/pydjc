@@ -118,7 +118,7 @@
 	
 	<update id="deleteDevice" >
 		update bsd_device t set del_flag = '1'
-  	     where FIND_IN_SET(t.id, getDeviceChildLst(#{id}))
+  	     where FIND_IN_SET(t.id, getDeviceChildLst(#{id},#{customerId}))
 	</update>
 
 </mapper>

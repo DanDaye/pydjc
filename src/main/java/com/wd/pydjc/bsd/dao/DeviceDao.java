@@ -14,7 +14,7 @@ import com.wd.pydjc.bsd.model.Device;
 public interface DeviceDao {
 
 	@Options(useGeneratedKeys = true, keyProperty = "id")
-	@Insert("insert into bsd_device(name, no, device_type_id, parent_id, is_start, customer_id, vandor_id, sort, rpd_no,del_flag, create_time, update_time) values(#{name}, #{no}, #{deviceTypeId}, #{parentId}, #{isStart}, #{customerId}, #{vandorId}, #{sort}, #{rpdNo}, #{delFlag},now(), now())")
+	@Insert("insert into bsd_device(name, no, device_type_id, parent_id, is_start, customer_id, vandor_id, sort, rdp_no,del_flag, create_time, update_time) values(#{name}, #{no}, #{deviceTypeId}, #{parentId}, #{isStart}, #{customerId}, #{vandorId}, #{sort}, #{rpdNo}, #{delFlag},now(), now())")
 	int save(Device device);
 	
 	int update(Device device);
