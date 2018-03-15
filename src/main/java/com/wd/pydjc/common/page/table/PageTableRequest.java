@@ -14,6 +14,7 @@ public class PageTableRequest implements Serializable {
 
 	private static final long serialVersionUID = 7328071045193618467L;
 
+	private Long monitoeTypeId;
 	private Integer offset;
 	private Integer limit;
 	private Map<String, Object> params;
@@ -40,5 +41,15 @@ public class PageTableRequest implements Serializable {
 
 	public void setParams(Map<String, Object> params) {
 		this.params = params;
+	}
+
+	
+
+	public Long getMonitoeTypeId() {
+		return monitoeTypeId;
+	}
+
+	public void setMonitoeTypeId(Long monitoeTypeId) {
+		this.monitoeTypeId = monitoeTypeId;
 	}
 }

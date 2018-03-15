@@ -14,6 +14,7 @@ public class MeasType extends BaseEntity<Long> {
 	private Long isStart;
 	private String unit;
 	private Long parentId;
+	private Long monitorTypeId;
 	private BigDecimal standardValue;
 	private BigDecimal oneLowerLimit;
 	private BigDecimal oneUpperLimit;
@@ -21,10 +22,11 @@ public class MeasType extends BaseEntity<Long> {
 	private BigDecimal twoUpperLimit;
 	private BigDecimal threeLowerLimit;
 	private BigDecimal threeUpperLimit;
+	private String fc;
 	private String limitUnit;
 	private long continueTime;
 	private String code645;
-	
+	private String monitorTypeName;
 	private String parentCode;
 	
 	public String getName() {
@@ -122,6 +124,24 @@ public class MeasType extends BaseEntity<Long> {
 	}
 	public void setCode645(String code645) {
 		this.code645 = code645;
+	}
+	public String getFc() {
+		return fc;
+	}
+	public void setFc(String fc) {
+		this.fc = fc;
+	}
+	public Long getMonitorTypeId() {
+		return monitorTypeId;
+	}
+	public void setMonitorTypeId(Long monitorTypeId) {
+		this.monitorTypeId = monitorTypeId;
+	}
+	public String getMonitorTypeName() {
+		return monitorTypeName;
+	}
+	public void setMonitorTypeName(String monitorTypeName) {
+		this.monitorTypeName = monitorTypeName;
 	}
 	
 	
