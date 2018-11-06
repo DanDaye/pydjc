@@ -1,7 +1,6 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    #url: jdbc:mysql://118.31.2.207:3306/pydjc?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
     url: jdbc:mysql://10.82.58.95:3306/pydjc?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
     username: root
     password: root
