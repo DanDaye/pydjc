@@ -27,7 +27,7 @@ import com.wd.pydjc.sys.model.Permission;
 import com.wd.pydjc.sys.model.Role;
 import com.wd.pydjc.sys.model.User;
 import com.wd.pydjc.sys.model.User.Status;
-import com.wd.pydjc.sys.service.UserService;
+import com.wd.pydjc.sys.service.UserServices;
 import com.wd.pydjc.common.utils.SpringUtil;
 import com.wd.pydjc.common.utils.UserUtil;
 
@@ -40,7 +40,7 @@ public class MyShiroRealm extends AuthorizingRealm {
 		UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) token;
 
 		String username = usernamePasswordToken.getUsername();
-		UserService userService = SpringUtil.getBean(UserService.class);
+		UserServices userService = SpringUtil.getBean(UserServices.class);
 		User user = userService.getUser(username);
 		if (user == null) {
 			throw new UnknownAccountException("用户名不存在");

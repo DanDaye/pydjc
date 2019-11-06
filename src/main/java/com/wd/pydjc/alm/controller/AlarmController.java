@@ -43,7 +43,12 @@ public class AlarmController {
 
 	@Autowired
 	private AlarmService alarmService;
-	
+
+	/**
+	 * 获取高级列表
+	 * @param request 告警列表请求
+	 * @return 告警列表响应
+	 */
 	@GetMapping
 	@ApiOperation(value = "告警列表")
 	public PageTableResponse list(PageTableRequest request) {
@@ -63,18 +68,31 @@ public class AlarmController {
 		}).handle(request);
 	}
 
+	/**
+	 * 获取当前用户
+	 * @return 当前用户
+	 */
 	@ApiOperation(value = "当前登录用户")
 	@GetMapping("/current")
 	public User currentUser() {
 		return UserUtil.getCurrentUser();
 	}
 
+	/**
+	 * 获取当前所有告警列表
+	 * @return 告警列表数据
+	 */
 	@GetMapping("/getCurrentAlarmList")
 	public List<AlarmData> getCurrentAlarmList(){
 		Map<String, Object> params = new HashMap<String, Object>();
 		return alarmService.getCurrentAlarmList(params);
 	}
-	
+
+	/**
+	 * 确认告警
+	 * @param measPointId
+	 * @return
+	 */
 	@GetMapping("/confirm")
 	public JSONObject confirm(Integer measPointId) {
 		JSONObject rows = new JSONObject();

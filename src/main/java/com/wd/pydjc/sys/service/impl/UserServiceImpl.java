@@ -17,11 +17,11 @@ import com.wd.pydjc.sys.dao.UserDao;
 import com.wd.pydjc.common.dto.UserDto;
 import com.wd.pydjc.sys.model.User;
 import com.wd.pydjc.sys.model.User.Status;
-import com.wd.pydjc.sys.service.UserService;
+import com.wd.pydjc.sys.service.UserServices;
 import com.wd.pydjc.common.utils.UserUtil;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserServices {
 
 	private static final Logger log = LoggerFactory.getLogger("adminLogger");
 

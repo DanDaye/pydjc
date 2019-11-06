@@ -3,7 +3,7 @@ package com.wd.pydjc.sys.service;
 import com.wd.pydjc.common.dto.UserDto;
 import com.wd.pydjc.sys.model.User;
 
-public interface UserService {
+public interface UserServices {
 
 	User saveUser(UserDto userDto);
 	

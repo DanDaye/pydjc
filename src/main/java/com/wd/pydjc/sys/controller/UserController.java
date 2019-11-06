@@ -25,7 +25,7 @@ import com.wd.pydjc.common.page.table.PageTableHandler;
 import com.wd.pydjc.common.page.table.PageTableResponse;
 import com.wd.pydjc.common.page.table.PageTableHandler.CountHandler;
 import com.wd.pydjc.common.page.table.PageTableHandler.ListHandler;
-import com.wd.pydjc.sys.service.UserService;
+import com.wd.pydjc.sys.service.UserServices;
 import com.wd.pydjc.common.utils.UserUtil;
 
 import io.swagger.annotations.Api;
@@ -44,7 +44,7 @@ public class UserController {
 	private static final Logger log = LoggerFactory.getLogger("adminLogger");
 
 	@Autowired
-	private UserService userService;
+	private UserServices userService;
 	@Autowired
 	private UserDao userDao;
 
